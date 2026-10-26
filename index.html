@@ -1,0 +1,583 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#f8dce6">
+<meta name="description" content="Discover stylish phone cases, iPad cases and chargers at Lala Case's.">
+<title>Lala Case's | Luxury Tech Accessories</title>
+
+<style>
+:root {
+  --pink: #f5c6d8;
+  --soft-pink: #fff1f6;
+  --deep-pink: #d66d96;
+  --black: #171417;
+  --white: #ffffff;
+  --muted: #777078;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #fff;
+  color: var(--black);
+}
+
+a { color: inherit; text-decoration: none; }
+
+button { font: inherit; cursor: pointer; }
+
+.announcement {
+  background: var(--black);
+  color: white;
+  text-align: center;
+  padding: 10px;
+  font-size: 11px;
+  letter-spacing: 1.5px;
+}
+
+header {
+  background: rgba(255,255,255,.96);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  border-bottom: 1px solid #f2e7ec;
+}
+
+.nav {
+  max-width: 1200px;
+  margin: auto;
+  padding: 17px 5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.logo {
+  font-family: Georgia, serif;
+  font-size: 25px;
+  font-weight: bold;
+  letter-spacing: -1px;
+}
+
+.logo span { color: var(--deep-pink); }
+
+.nav-links {
+  display: flex;
+  gap: 22px;
+  font-size: 13px;
+}
+
+.nav-links a:hover { color: var(--deep-pink); }
+
+.hero {
+  background: var(--soft-pink);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  min-height: 450px;
+}
+
+.hero-copy { padding: 55px 8%; }
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: var(--deep-pink);
+  font-size: 11px;
+  font-weight: bold;
+}
+
+.hero h1 {
+  font-family: Georgia, serif;
+  font-size: clamp(40px, 5vw, 68px);
+  line-height: 1.04;
+  font-weight: normal;
+  margin: 18px 0;
+}
+
+.hero h1 em {
+  color: var(--deep-pink);
+  font-weight: normal;
+}
+
+.hero p {
+  color: #675c63;
+  line-height: 1.8;
+  font-size: 14px;
+  max-width: 390px;
+}
+
+.primary-btn {
+  display: inline-block;
+  background: var(--black);
+  color: white;
+  border: none;
+  padding: 15px 23px;
+  margin-top: 15px;
+  font-size: 12px;
+  letter-spacing: 1px;
+  transition: .2s;
+}
+
+.primary-btn:hover {
+  background: var(--deep-pink);
+}
+
+.hero-image {
+  height: 450px;
+  background:
+    linear-gradient(0deg, rgba(30,10,20,.05), rgba(30,10,20,.02)),
+    url("https://images.unsplash.com/photo-1605236453806-6ff36851218e?auto=format&fit=crop&w=1100&q=85")
+    center/cover;
+}
+
+.benefits {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 25px 5%;
+  text-align: center;
+  border-bottom: 1px solid #f1e6eb;
+}
+
+.benefit { padding: 8px; }
+
+.benefit strong {
+  display: block;
+  font-size: 12px;
+  margin-bottom: 6px;
+}
+
+.benefit span {
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.section {
+  max-width: 1200px;
+  margin: auto;
+  padding: 65px 5%;
+}
+
+.section-heading {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.section-heading h2 {
+  font-family: Georgia, serif;
+  font-size: 35px;
+  font-weight: normal;
+  margin: 10px 0;
+}
+
+.section-heading p {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 9px;
+  margin-bottom: 30px;
+}
+
+.filter-btn {
+  border: 1px solid #eadde3;
+  padding: 10px 16px;
+  background: white;
+  font-size: 12px;
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+  background: var(--black);
+  color: white;
+  border-color: var(--black);
+}
+
+.products {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.product { min-width: 0; }
+
+.product-image {
+  width: 100%;
+  aspect-ratio: 4 / 4.7;
+  object-fit: cover;
+  display: block;
+  background: var(--soft-pink);
+}
+
+.product-info { padding: 13px 2px; }
+
+.product-category {
+  color: var(--deep-pink);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.product h3 {
+  font-size: 14px;
+  font-weight: 500;
+  margin: 8px 0;
+}
+
+.product-price {
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.order-btn {
+  display: block;
+  width: 100%;
+  border: 1px solid var(--black);
+  background: white;
+  padding: 12px 5px;
+  margin-top: 13px;
+  font-size: 11px;
+  letter-spacing: .5px;
+}
+
+.order-btn:hover {
+  background: var(--black);
+  color: white;
+}
+
+.empty-message {
+  display: none;
+  text-align: center;
+  grid-column: 1 / -1;
+  padding: 30px;
+}
+
+.promo {
+  background: var(--soft-pink);
+  padding: 50px 7%;
+  text-align: center;
+}
+
+.promo h2 {
+  font-family: Georgia, serif;
+  font-size: 34px;
+  font-weight: normal;
+  margin: 12px 0;
+}
+
+.promo p {
+  color: #675c63;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 45px;
+  align-items: center;
+}
+
+.about-grid img {
+  width: 100%;
+  max-height: 420px;
+  object-fit: cover;
+}
+
+.about-grid h2 {
+  font-family: Georgia, serif;
+  font-weight: normal;
+  font-size: 35px;
+}
+
+.about-grid p {
+  color: var(--muted);
+  line-height: 1.9;
+  font-size: 14px;
+}
+
+footer {
+  background: var(--black);
+  color: white;
+  padding: 40px 5% 20px;
+}
+
+.footer-inner {
+  max-width: 1100px;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 25px;
+}
+
+footer p {
+  color: #c5bbc2;
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.footer-bottom {
+  border-top: 1px solid #40363e;
+  margin-top: 30px;
+  padding-top: 18px;
+  text-align: center;
+  color: #c5bbc2;
+  font-size: 11px;
+}
+
+@media (max-width: 760px) {
+  .nav { padding: 15px 4%; }
+  .logo { font-size: 21px; }
+  .nav-links { gap: 12px; font-size: 11px; }
+  .hero { grid-template-columns: 1fr; }
+  .hero-copy { padding: 45px 7%; }
+  .hero-image { height: 310px; }
+  .benefits { padding: 18px 2%; }
+  .benefit strong { font-size: 10px; }
+  .benefit span { font-size: 10px; }
+  .section { padding: 45px 4%; }
+  .products { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px 12px; }
+  .section-heading h2 { font-size: 29px; }
+  .about-grid { grid-template-columns: 1fr; gap: 20px; }
+  .about-grid h2 { font-size: 30px; }
+}
+
+@media (max-width: 360px) {
+  .nav-links { gap: 8px; }
+  .logo { font-size: 19px; }
+  .filter-btn { padding: 9px 11px; }
+}
+</style>
+</head>
+
+<body>
+<div class="announcement">
+  YOUR STYLE. YOUR TECH. YOUR WAY.
+</div>
+
+<header>
+  <nav class="nav">
+    <a href="#" class="logo">LALA <span>CASE'S</span></a>
+    <div class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#shop">Shop</a>
+      <a href="#about">About</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+<section class="hero" id="home">
+  <div class="hero-copy">
+    <div class="eyebrow">The accessory edit</div>
+    <h1>Tech essentials,<br><em>beautifully styled.</em></h1>
+    <p>
+      Elevate your everyday with stylish phone cases,
+      iPad accessories and chargers designed to complement
+      your lifestyle.
+    </p>
+    <a class="primary-btn" href="#shop">EXPLORE THE COLLECTION →</a>
+  </div>
+  <div class="hero-image" role="img" aria-label="Stylish phone accessories"></div>
+</section>
+
+<section class="benefits">
+  <div class="benefit">
+    <strong>♡ CURATED STYLE</strong>
+    <span>Accessories you'll love</span>
+  </div>
+  <div class="benefit">
+    <strong>✧ EASY ORDERING</strong>
+    <span>Order directly on WhatsApp</span>
+  </div>
+  <div class="benefit">
+    <strong>◇ PERSONAL SERVICE</strong>
+    <span>We're here to help</span>
+  </div>
+</section>
+
+<section class="section" id="shop">
+  <div class="section-heading">
+    <div class="eyebrow">Find your favourite</div>
+    <h2>The Collection</h2>
+    <p>Little details. Big style.</p>
+  </div>
+
+  <div class="filters">
+    <button class="filter-btn active" data-filter="all">All Products</button>
+    <button class="filter-btn" data-filter="phone">Phone Cases</button>
+    <button class="filter-btn" data-filter="ipad">iPad Cases</button>
+    <button class="filter-btn" data-filter="charger">Chargers</button>
+  </div>
+
+  <div class="products" id="products">
+
+    <article class="product" data-category="phone">
+      <img class="product-image"
+        src="https://images.unsplash.com/photo-1603313011108-4c4f4b0e1b1b?auto=format&fit=crop&w=600&q=80"
+        alt="Phone case" loading="lazy">
+      <div class="product-info">
+        <div class="product-category">Phone Cases</div>
+        <h3>Everyday Chic Case</h3>
+        <div class="product-price">₦8,000</div>
+        <button class="order-btn" data-product="Everyday Chic Case" data-price="8000">ORDER ON WHATSAPP</button>
+      </div>
+    </article>
+
+    <article class="product" data-category="phone">
+      <img class="product-image"
+        src="https://images.unsplash.com/photo-1605236453806-6ff36851218e?auto=format&fit=crop&w=600&q=80"
+        alt="Stylish phone accessories" loading="lazy">
+      <div class="product-info">
+        <div class="product-category">Phone Cases</div>
+        <h3>Classic Protective Case</h3>
+        <div class="product-price">₦10,000</div>
+        <button class="order-btn" data-product="Classic Protective Case" data-price="10000">ORDER ON WHATSAPP</button>
+      </div>
+    </article>
+
+    <article class="product" data-category="ipad">
+      <img class="product-image"
+        src="https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?auto=format&fit=crop&w=600&q=80"
+        alt="Tablet device" loading="lazy">
+      <div class="product-info">
+        <div class="product-category">iPad Cases</div>
+        <h3>Minimal iPad Cover</h3>
+        <div class="product-price">₦18,000</div>
+        <button class="order-btn" data-product="Minimal iPad Cover" data-price="18000">ORDER ON WHATSAPP</button>
+      </div>
+    </article>
+
+    <article class="product" data-category="charger">
+      <img class="product-image"
+        src="https://images.unsplash.com/photo-1583394838336-acd977736f90?auto=format&fit=crop&w=600&q=80"
+        alt="Electronic accessories" loading="lazy">
+      <div class="product-info">
+        <div class="product-category">Chargers</div>
+        <h3>Everyday Charging Set</h3>
+        <div class="product-price">₦12,000</div>
+        <button class="order-btn" data-product="Everyday Charging Set" data-price="12000">ORDER ON WHATSAPP</button>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<section class="promo">
+  <div class="eyebrow">Your next favourite accessory</div>
+  <h2>A little upgrade goes a long way.</h2>
+  <p>Find your next favourite piece at Lala Case's.</p>
+  <a class="primary-btn" href="#shop">SHOP THE COLLECTION</a>
+</section>
+
+<section class="section" id="about">
+  <div class="about-grid">
+    <img
+      src="https://images.unsplash.com/photo-1512499617640-c74ae3a79d37?auto=format&fit=crop&w=900&q=80"
+      alt="Technology and accessories" loading="lazy">
+    <div>
+      <div class="eyebrow">Welcome to Lala Case's</div>
+      <h2>Style meets everyday technology.</h2>
+      <p>
+        We believe your everyday tech accessories should
+        feel just as special as the rest of your style.
+        Discover phone cases, iPad cases and chargers
+        selected to bring a little more personality
+        to your everyday life.
+      </p>
+      <a class="primary-btn" href="#shop">DISCOVER OUR COLLECTION</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <a href="#" class="logo">LALA <span>CASE'S</span></a>
+      <p>Everyday essentials, with a touch of style.</p>
+    </div>
+    <div>
+      <strong>CONTACT US</strong>
+      <p>Questions about a product or your order?</p>
+      <a id="contact-link" href="#" style="color:#f5c6d8">Chat with us on WhatsApp →</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    © <span id="year"></span> Lala Case's. All rights reserved.
+  </div>
+</footer>
+
+<script>
+/*
+  IMPORTANT:
+  Replace the placeholder below with the business WhatsApp number.
+  Use the country code and digits only, without +, spaces or dashes.
+  Example format for a Nigerian number: 2348012345678
+*/
+const WHATSAPP_NUMBER = "234XXXXXXXXXX";
+
+function openWhatsApp(message) {
+  if (!/^234\d{10}$/.test(WHATSAPP_NUMBER)) {
+    alert("The store owner needs to add the correct WhatsApp number to the website first.");
+    return;
+  }
+
+  const url = "https://wa.me/" + WHATSAPP_NUMBER +
+    "?text=" + encodeURIComponent(message);
+
+  window.open(url, "_blank", "noopener,noreferrer");
+}
+
+document.querySelectorAll(".order-btn").forEach(button => {
+  button.addEventListener("click", () => {
+    const product = button.dataset.product;
+    const price = Number(button.dataset.price).toLocaleString("en-NG");
+    openWhatsApp(
+      "Hello Lala Case's! I would like to order: " +
+      product + " — ₦" + price +
+      ". Please confirm availability and delivery details."
+    );
+  });
+});
+
+document.getElementById("contact-link").addEventListener("click", event => {
+  event.preventDefault();
+  openWhatsApp("Hello Lala Case's! I would like to make an enquiry.");
+});
+
+document.getElementById("year").textContent = new Date().getFullYear();
+
+document.querySelectorAll(".filter-btn").forEach(button => {
+  button.addEventListener("click", () => {
+    document.querySelectorAll(".filter-btn").forEach(item => {
+      item.classList.remove("active");
+    });
+    button.classList.add("active");
+
+    const filter = button.dataset.filter;
+
+    document.querySelectorAll(".product").forEach(product => {
+      product.style.display =
+        filter === "all" || product.dataset.category === filter
+          ? ""
+          : "none";
+    });
+  });
+});
+</script>
+</body>
+</html>
